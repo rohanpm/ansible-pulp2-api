@@ -1,9 +1,8 @@
 import io
+
 import pytest
-
-
-from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils import urls
+from ansible.module_utils.basic import AnsibleModule
 
 
 @pytest.mark.parametrize(

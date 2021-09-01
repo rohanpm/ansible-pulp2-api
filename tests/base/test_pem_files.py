@@ -1,12 +1,11 @@
-from unittest import mock
 import io
-import os
 import logging
+import os
+from unittest import mock
+
 import pytest
-
-
-from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils import urls
+from ansible.module_utils.basic import AnsibleModule
 
 
 def test_serializes_certs(module_utils_base, set_module_params):

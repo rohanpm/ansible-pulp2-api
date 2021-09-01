@@ -1,9 +1,61 @@
-from ansible.module_utils.basic import AnsibleModule
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+# Copyright: (c) 2021, Red Hat, Inc.
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+DOCUMENTATION = """
+---
+module: pulp_role
+short_description: Manage a role in Pulp 2.x
+description:
+- Creates, updates or deletes a role (for role-based access control) in Pulp 2.x.
+- Uses Pulp's API.
+
+options:
+    id:
+        required: true
+        type: str
+        description:
+        - Unique identifier for the role.
+        - 'Example: "super-users".'
+
+    display_name:
+        type: str
+        description:
+        - Arbitrary user-oriented name for the role.
+
+    description:
+        type: str
+        description:
+        - A brief description of this role.
+
+    state:
+        type: str
+        choices:
+        - absent
+        - present
+        description:
+        - Defines whether this role should exist.
+        default: present
+
+    permissions:
+        type: dict
+        description:
+        - A resource => permission mapping associated with the role.
+        - 'Example: C({"/": ["READ"], "/v2/repositories": ["CREATE", "UPDATE"]})'
+        default: '{}'
+
+version_added: 0.1.0
+author: Rohan McGovern (@rohanpm)
+extends_documentation_fragment: release_engineering.pulp2_api.base_options
+"""
+
+from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.release_engineering.pulp2_api.plugins.module_utils.base import (
-    BaseModule,
-    LOG,
     COMMON_ARGUMENTS,
+    LOG,
+    BaseModule,
 )
 
 

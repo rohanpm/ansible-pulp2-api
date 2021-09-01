@@ -1,6 +1,6 @@
-import sys
-import os
 import json
+import os
+import sys
 from unittest import mock
 
 import ansible.module_utils.basic
