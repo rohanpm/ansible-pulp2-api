@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import os
-import logging
-import json
 import contextlib
+import json
+import logging
+import os
 from tempfile import NamedTemporaryFile
 
 from ansible.module_utils import urls
