@@ -1,0 +1,34 @@
+
+name: tox
+
+on:
+  workflow_dispatch: {}
+  push: {}
+  pull_request: {}
+
+jobs:
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install tox
+        run: pip install tox
+
+      - name: Run tox
+        run: tox -e tests
+
+      - name: Install coverage
+        run: pip install coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1.0.15
+        with:
+          fail_ci_if_error: true
+          verbose: true
