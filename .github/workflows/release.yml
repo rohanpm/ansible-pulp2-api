@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  tag:
+  release:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -23,6 +23,7 @@ jobs:
     - name: Get version from metadata
       run: >-
         sed -n -r -e 's|^version: +([0-9.]+)$|::set-output name=version::\1|p' galaxy.yml
+      id: get_version
 
     - name: Rename for release
       run: mv -v release_engineering-pulp2_api-${{ steps.get_version.outputs.version }}.tar.gz collection.tar.gz
