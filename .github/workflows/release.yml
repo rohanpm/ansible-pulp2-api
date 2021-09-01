@@ -1,0 +1,45 @@
+name: release
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install tox
+      run: pip install tox
+
+    - name: Build
+      run: tox -e build
+
+    - name: Get version from metadata
+      run: >-
+        sed -n -r -e 's|^version: +([0-9.]+)$|::set-output name=version::\1|p' galaxy.yml
+
+    - name: Rename for release
+      run: mv -v release_engineering-pulp2_api-${{ steps.get_version.outputs.version }}.tar.gz collection.tar.gz
+
+    - name: Ensure tag exists
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v5.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        custom_tag: ${{ steps.get_version.outputs.version }}
+        create_annotated_tag: true
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          collection.tar.gz
+        tag_name: v${{ steps.get_version.outputs.version }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
