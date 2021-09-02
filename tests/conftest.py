@@ -83,6 +83,15 @@ def pulp_role():
     yield pulp_role
 
 
+@pytest.fixture
+def pulp_user():
+    from ansible_collections.release_engineering.pulp2_api.plugins.modules import (
+        pulp_user,
+    )
+
+    yield pulp_user
+
+
 @pytest.fixture(scope="function")
 def set_module_params(monkeypatch):
     def fn(**kwargs):
