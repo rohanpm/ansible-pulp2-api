@@ -46,6 +46,15 @@ options:
         - 'Example: C({"/": ["READ"], "/v2/repositories": ["CREATE", "UPDATE"]})'
         default: '{}'
 
+    users:
+        type: list
+        elements: str
+        description:
+        - List of all users associated with this role.
+        - If omitted, users per role will not be managed.
+        - 'Example: C(["bob", "alice"])'
+        version_added: 0.3.0
+
 version_added: 0.1.0
 author: Rohan McGovern (@rohanpm)
 extends_documentation_fragment: release_engineering.pulp2_api.base_options
@@ -68,6 +77,7 @@ class RoleModule(BaseModule):
                     display_name=dict(type="str"),
                     description=dict(type="str", default="deployed by ansible"),
                     permissions=dict(type=dict, default={}),
+                    users=dict(type=list, default=None),
                     state=dict(
                         type="str", default="present", choices=["present", "absent"]
                     ),
@@ -84,6 +94,10 @@ class RoleModule(BaseModule):
     @property
     def role_url(self):
         return f"roles/{self.role_id}/"
+
+    @property
+    def role_users(self):
+        return self.module.params.get("users")
 
     @property
     def display_name(self):
@@ -118,9 +132,11 @@ class RoleModule(BaseModule):
         if not to_revoke and not to_grant:
             return
 
+        self.changed = True
+
         if (to_revoke or to_grant) and self.module.check_mode:
             return self.exit_ok(
-                msg="would adjust permissions (check mode)", changed=True
+                msg="would adjust permissions (check mode)",
             )
 
         for (actions, action_type) in [
@@ -134,6 +150,42 @@ class RoleModule(BaseModule):
                 body = dict(role_id=self.role_id, resource=resource, operations=ops)
                 LOG.debug("%s %s %s", action_type, resource, ops)
                 self.update_resource(path, body)
+
+    def adjust_users(self, current_role):
+        current_users = current_role.get("users") or []
+        desired = self.role_users
+
+        LOG.debug("current users %s, desired %s", current_users, desired)
+
+        if desired is None:
+            # Don't manage users in this case
+            return
+
+        # Gather who we need to add and remove.
+        to_remove = set()
+        to_add = set()
+
+        for username in current_users:
+            if username not in desired:
+                to_remove.add(username)
+
+        for username in desired:
+            if username not in current_users:
+                to_add.add(username)
+
+        if not to_remove and not to_add:
+            return
+
+        self.changed = True
+
+        if (to_remove or to_add) and self.module.check_mode:
+            return self.exit_ok(msg="would adjust users (check mode)")
+
+        for username in sorted(to_remove):
+            self.delete_resource(f"{self.role_url}users/{username}/")
+
+        for username in sorted(to_add):
+            self.update_resource(f"{self.role_url}users/", {"login": username})
 
     def handle_role_absent(self):
         if self.module.params["state"] == "absent":
@@ -154,9 +206,11 @@ class RoleModule(BaseModule):
             },
         )
 
-        # If we've just created a role, there are no permissions yet.
-        # Adjust them.
-        self.adjust_permissions({"permissions": {}})
+        # If we've just created a role, there are no permissions or users yet.
+        # Adjust them as needed.
+        current_role = {"permissions": {}, "users": []}
+        self.adjust_permissions(current_role)
+        self.adjust_users(current_role)
 
     def delete_role(self):
         self.changed = True
@@ -189,6 +243,7 @@ class RoleModule(BaseModule):
             )
 
         self.adjust_permissions(current_role)
+        self.adjust_users(current_role)
 
     def run_module(self):
         current_role = self.get_resource(self.role_url)
