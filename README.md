@@ -2,8 +2,8 @@
 
 An ansible collection for managing Pulp 2.x resources.
 
-[![Build Status](https://github.com/rohanpm/ansible_pulp2_api/actions/workflows/tox.yml/badge.svg)](https://github.com/rohanpm/ansible_pulp2_api/actions/workflows/tox.yml)
-[![codecov](https://codecov.io/gh/rohanpm/ansible_pulp2_api/branch/main/graph/badge.svg?token=WEHTW65CPV)](https://codecov.io/gh/rohanpm/ansible_pulp2_api)
+[![Build Status](https://github.com/release-engineering/ansible-pulp2-api/actions/workflows/tox.yml/badge.svg)](https://github.com/release-engineering/ansible-pulp2-api/actions/workflows/tox.yml)
+[![codecov](https://codecov.io/gh/release-engineering/ansible-pulp2-api/branch/main/graph/badge.svg?token=cAamOYh8p4)](https://codecov.io/gh/release-engineering/ansible-pulp2-api)
 
 <!--TOC-->
 
@@ -33,14 +33,14 @@ This collection is not currently published on galaxy.ansible.com.
 It may be installed directly from the git repo:
 
 ```
-ansible-galaxy collection install git+https://github.com/rohanpm/ansible_pulp2_api.git,main
+ansible-galaxy collection install git+https://github.com/release-engineering/ansible-pulp2-api.git,main
 ```
 
 If you are using an older version of ansible which does not support installing
 from git, you can install from a tarball of the latest stable release:
 
 ```
-ansible-galaxy collection install https://github.com/rohanpm/ansible_pulp2_api/releases/latest/download/collection.tar.gz
+ansible-galaxy collection install https://github.com/release-engineering/ansible-pulp2-api/releases/latest/download/collection.tar.gz
 ```
 
 ## Module reference

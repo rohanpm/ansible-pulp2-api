@@ -9,7 +9,7 @@ namespace: release_engineering
 name: pulp2_api
 
 # The version of the collection. Must be compatible with semantic versioning
-version: 0.3.0
+version: 1.0.0
 
 # The path to the Markdown (.md) readme file. This path is relative to the root of the collection
 readme: README.md
@@ -45,7 +45,7 @@ tags: ['pulp', 'pulp2']
 dependencies: {}
 
 # The URL of the originating SCM repository
-repository: https://github.com/rohanpm/ansible_pulp2_api
+repository: https://github.com/release-engineering/ansible-pulp2-api
 
 # The URL to any online docs
 # documentation: http://docs.example.com
