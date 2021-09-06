@@ -17,7 +17,7 @@ URL_ARGUMENTS = dict(
     validate_certs=dict(default=True, type="bool"),
     url_username=dict(type="str"),
     url_password=dict(type="str", no_log=True),
-    http_agent=dict(type="str", default="ansible-pulp2_api"),
+    http_agent=dict(type="str", default="ansible release_engineering.pulp2_api"),
     force_basic_auth=dict(type="str"),
     follow_redirects=dict(type="str"),
     client_cert=dict(type="str"),
