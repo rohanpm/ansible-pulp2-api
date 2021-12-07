@@ -4,11 +4,11 @@
 #
 #    pip-compile --generate-hashes --output-file=test-requirements.txt test-requirements.in
 #
-ansible==4.9.0 \
-    --hash=sha256:e8768deafd08da710de4aee518ec7f84d270faf64a9e71e63239b23c14806ba7
+ansible==5.0.1 \
+    --hash=sha256:b47cc704bbb69fb387bdaa24a1cb0c5ef0a4253763fd3315ef93ba6ae3a5c376
     # via -r test-requirements.in
-ansible-core==2.11.6 \
-    --hash=sha256:93d50283c7c5b476debf83dc089b3f679b939a8b9a7b5d628d28daafbb3d303a
+ansible-core==2.12.0 \
+    --hash=sha256:0e9049a1ab8b8c54ddc80738dc0ab2b57870be6fe4cd4e5585d471547ab74b13
     # via ansible
 attrs==21.2.0 \
     --hash=sha256:149e90d6d8ac20db7a955ad60cf0e6881a3f20d37096140088356da6c716b0b1 \
