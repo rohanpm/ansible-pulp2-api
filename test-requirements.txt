@@ -7,8 +7,8 @@
 ansible==5.5.0 \
     --hash=sha256:b8a76d737889c9bfd0e6b0f2276dcf8d836da667067a355776f3504d7a66d518
     # via -r test-requirements.in
-ansible-core==2.12.3 \
-    --hash=sha256:8a135a9f74c97cab67759293744ad34350f719523e8bd9bb9008df4cf953af20
+ansible-core==2.12.4 \
+    --hash=sha256:827af75985a6f04b980bd371027bf038cb187640628557298acb9983a8f2c2da
     # via ansible
 attrs==21.4.0 \
     --hash=sha256:2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4 \
