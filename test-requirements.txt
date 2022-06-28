@@ -4,11 +4,13 @@
 #
 #    pip-compile --generate-hashes --output-file=test-requirements.txt test-requirements.in
 #
-ansible==5.9.0 \
-    --hash=sha256:6f2f762fca6cff0401a6d2119b8ba3b2f111ea1a93fd203c86df09bc75570f18
+ansible==6.0.0 \
+    --hash=sha256:3a4516072660e34d4647db1627c401dffcbec23c50633d71ac7902e8c934e370 \
+    --hash=sha256:641a2c27bc5768f9a8ad14880f1f6e571c1f2af1d45e76f271d76e3f74754c53
     # via -r test-requirements.in
-ansible-core==2.12.6 \
-    --hash=sha256:5f366e851159d8f72ce68d32b8c0edda56ee537c01e9f68eca382bd1510af65d
+ansible-core==2.13.1 \
+    --hash=sha256:45d55e052bcea487366b0893b22f247e913a1f0948197658b7f3532a37ab6841 \
+    --hash=sha256:abd478ceff1a0aba95e94ceab8dc820f407bcc0f0033dc546840cddc29a36958
     # via ansible
 attrs==21.4.0 \
     --hash=sha256:2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4 \
@@ -250,9 +252,9 @@ pyyaml==6.0 \
     --hash=sha256:e61ceaab6f49fb8bdfaa0f92c4b57bcfbea54c09277b1b4f7ac376bfb7a7c174 \
     --hash=sha256:f84fbc98b019fef2ee9a1cb3ce93e3187a6df0b2538a651bfb890254ba9f90b5
     # via ansible-core
-resolvelib==0.5.4 \
-    --hash=sha256:8113ae3ed6d33c6be0bcbf03ffeb06c0995c099b7b8aaa5ddf2e9b3b3df4e915 \
-    --hash=sha256:9b9b80d5c60e4c2a8b7fbf0712c3449dc01d74e215632e5199850c9eca687628
+resolvelib==0.8.1 \
+    --hash=sha256:c6ea56732e9fb6fca1b2acc2ccc68a0b6b8c566d8f3e78e0443310ede61dbd37 \
+    --hash=sha256:d9b7907f055c3b3a2cfc56c914ffd940122915826ff5fb5b1de0c99778f4de98
     # via ansible-core
 tomli==2.0.1 \
     --hash=sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc \
