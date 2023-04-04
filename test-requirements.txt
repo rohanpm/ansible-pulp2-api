@@ -4,13 +4,13 @@
 #
 #    pip-compile --generate-hashes --output-file=test-requirements.txt test-requirements.in
 #
-ansible==7.3.0 \
-    --hash=sha256:5039bf0fe4cbb9dcc3dbefe464fe2fa7fe75d8548814f00c478d5fe90c3e3979 \
-    --hash=sha256:56c2fd97487b2cc83e39e895d8dfad8b2a5df34d490394a15735ebcfdc45f5be
+ansible==7.4.0 \
+    --hash=sha256:0964d6ec7b363d2d559f245c39b01798c720a85b207672ec2c9d83cf61564b90 \
+    --hash=sha256:c9b5cae2ff8168b3dc859fff12275338cd7c84ef37f62889076f82846bb4beb5
     # via -r test-requirements.in
-ansible-core==2.14.3 \
-    --hash=sha256:093a4bc4a1259eaeb56ea37ec1d33cf1836c88f39281d89197f8d3480e068a58 \
-    --hash=sha256:a4b36bfdd7aa3534d449e9ae6a9fd82d8e513fda8caaf5d18e1e27d217151c8c
+ansible-core==2.14.4 \
+    --hash=sha256:3915ef89f74ffd6277e534b4f14843d2425a3e7bb6ffae26eecd4cc571d020cc \
+    --hash=sha256:90b260bc264901d35fb1f0753f2b650813f54cfe6476540afbc6b25ef541ef14
     # via ansible
 attrs==22.2.0 \
     --hash=sha256:29e95c7f6778868dbd49170f98f8818f78f3dc5e0e37c0b1f474e3561b240836 \
