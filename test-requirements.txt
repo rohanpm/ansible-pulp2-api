@@ -4,13 +4,13 @@
 #
 #    pip-compile --generate-hashes --output-file=test-requirements.txt test-requirements.in
 #
-ansible==8.2.0 \
-    --hash=sha256:4b0b4f301c9d42d39597d45fdd5c6844f4ae5beeb5c003659b9fc464246a14f5 \
-    --hash=sha256:935a6921ffb034aa18e6507b49e401676cd15243d6faa5e05e221008bf725c97
+ansible==8.3.0 \
+    --hash=sha256:5e58001d7d6dc33e5d156ca343883b613ec988f69364b0a43f7124fe4b5be2f2 \
+    --hash=sha256:f36b6f809743a4bca4c969178c7f4e0a960b2922c6c93ae12c08846e3acddc5a
     # via -r test-requirements.in
-ansible-core==2.15.2 \
-    --hash=sha256:07a8f0476904876aaaf51401c617519cdd9cfb6e1e3ac46597c35699b0b83d52 \
-    --hash=sha256:84251b001f2f9c0914beedffcf19529e745a13108159d1fe27de9e3a6a63ac5a
+ansible-core==2.15.3 \
+    --hash=sha256:261bc01a15274fc5a6950d5b92b9aa1b7d7c6e8f7543c914505e5bfd9744793a \
+    --hash=sha256:bc2f5ab74e1c81609aaa9bc8f7f92d939d8e1c847923290301231bdf4dadc812
     # via ansible
 cffi==1.15.1 \
     --hash=sha256:00a9ed42e88df81ffae7a8ab6d9356b371399b91dbdf0c3cb1e84c03a13aceb5 \
@@ -157,9 +157,9 @@ cryptography==41.0.3 \
     --hash=sha256:ce785cf81a7bdade534297ef9e490ddff800d956625020ab2ec2780a556c313e \
     --hash=sha256:d0d651aa754ef58d75cec6edfbd21259d93810b73f6ec246436a21b7841908de
     # via ansible-core
-exceptiongroup==1.1.2 \
-    --hash=sha256:12c3e887d6485d16943a309616de20ae5582633e0a2eda17f4e10fd61c1e8af5 \
-    --hash=sha256:e346e69d186172ca7cf029c8c1d16235aa0e04035e5750b4b95039e65204328f
+exceptiongroup==1.1.3 \
+    --hash=sha256:097acd85d473d75af5bb98e41b61ff7fe35efe6675e4f9370ec6ec5126d160e9 \
+    --hash=sha256:343280667a4585d195ca1cf9cef84a4e178c4b6cf2274caef9859782b567d5e3
     # via pytest
 importlib-resources==5.0.7 \
     --hash=sha256:2238159eb743bd85304a16e0536048b3e991c531d1cd51c4a834d1ccf2829057 \
