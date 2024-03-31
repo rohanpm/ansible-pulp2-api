@@ -8,9 +8,9 @@ ansible==8.7.0 \
     --hash=sha256:3a5ca5152e4547d590e40b542d76b18dbbe2b36da4edd00a13a7c51a374ff737 \
     --hash=sha256:fa7d3bc2dfdb0ab031df645814ff86b15cb5ec041bfbee4041f795abfa5646ca
     # via -r test-requirements.in
-ansible-core==2.15.9 \
-    --hash=sha256:25f9b1b5a5af3c0986bd3928ed086eaddb867527fb5c83afef1a03cfad34f345 \
-    --hash=sha256:5b6a4b12aa5358f60933e79d86763e3558862282fb1dc563a29b9999e5849fc3
+ansible-core==2.15.10 \
+    --hash=sha256:42e49f1a6d8cf6cccde775c06c1394885353b71ad9e5f670c6f32d2890127ce8 \
+    --hash=sha256:954dbe8e4e802a4dd5df0366193975b692a05806aa8d7358418a7e617346b20f
     # via ansible
 cffi==1.16.0 \
     --hash=sha256:0c9ef6ff37e974b73c25eecc13952c55bceed9112be2d9d938ded8e856138bcc \
@@ -242,9 +242,9 @@ pluggy==1.4.0 \
     --hash=sha256:7db9f7b503d67d1c5b95f59773ebb58a8c1c288129a88665838012cfb07b8981 \
     --hash=sha256:8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be
     # via pytest
-pycparser==2.21 \
-    --hash=sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9 \
-    --hash=sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206
+pycparser==2.22 \
+    --hash=sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6 \
+    --hash=sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc
     # via cffi
 pytest==8.1.1 \
     --hash=sha256:2a8386cfc11fa9d2c50ee7b2a57e7d898ef90470a7a34c4b949ff59662bb78b7 \
