@@ -24,15 +24,6 @@ jobs:
       - name: Run tox
         run: tox -e tests
 
-      - name: Install coverage
-        run: pip install coverage
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1.0.15
-        with:
-          fail_ci_if_error: true
-          verbose: true
-
   build:
     runs-on: ubuntu-latest
     steps:

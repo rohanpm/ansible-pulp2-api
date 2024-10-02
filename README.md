@@ -3,7 +3,6 @@
 An ansible collection for managing Pulp 2.x resources.
 
 [![Build Status](https://github.com/release-engineering/ansible-pulp2-api/actions/workflows/tox.yml/badge.svg)](https://github.com/release-engineering/ansible-pulp2-api/actions/workflows/tox.yml)
-[![codecov](https://codecov.io/gh/release-engineering/ansible-pulp2-api/branch/main/graph/badge.svg?token=cAamOYh8p4)](https://codecov.io/gh/release-engineering/ansible-pulp2-api)
 
 <!--TOC-->
 
